@@ -1,0 +1,6 @@
+.nav {width: 360px; margin-top: 20px; border-bottom: 1px solid #ccc;}
+.nav ul {margin-left: 20px;}
+.nav ul li {float: left;}
+.nav ul li a {display: block; padding: 10px; font-size: 14px; color: #ccc;}
+.nav ul li.active a {color: #000;}
+
