@@ -1,4 +1,5 @@
 import '../css/Singup.css'
+import { Link } from 'react-router-dom';
 
 const Singup = () => {
     return (  
@@ -7,11 +8,11 @@ const Singup = () => {
                 <div className="row">
                     <div className='header'>
                         <div className="infant_img">
-                            <a href="#">
+                            <Link to ="/Login">
                             <img src={process.env.PUBLIC_URL + "./images/baby.png"} alt="아이프로필" />
-                            </a>
+                            </Link>
                         </div>
-                        <h1>우리 아이 등록</h1>
+                        <h1><Link to ="/Login">우리 아이 등록</Link></h1>
                     </div>
                 </div>
             </div>    

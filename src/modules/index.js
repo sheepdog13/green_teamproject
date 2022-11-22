@@ -3,10 +3,13 @@ import { combineReducers } from "redux";
 
 
 // 작성한 리덕스 모듈을 가져옴
-import preview1 from "./Preview1";
-
+import healthChart from "./HealthChart";
+import checkUp from "./CheckUp";
+import growth from "./Growth";
+import temperature from "./Temperature";
+import infant from "./Infant";
 
 // 작성한리덕스를 객체로 묶어서 내보냄
-const rootReducer = combineReducers({preview1});
+const rootReducer = combineReducers({healthChart, checkUp, growth, temperature, infant});
 
 export default rootReducer;

@@ -1,6 +1,8 @@
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
+
+
 const GlobalStyles = createGlobalStyle`
 ${reset}
 // 아래에 전역 스타일을 추가
@@ -18,7 +20,7 @@ body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, lege
 
 /* a 링크 초기화 */
 a {color: #222; text-decoration: none;}
-a:hover {color: #390;}
+a:hover {}
 
 /* 폰트 초기화 */
 body, input, textarea, select, button, table{  font-family:'Noto Sans KR', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; 
