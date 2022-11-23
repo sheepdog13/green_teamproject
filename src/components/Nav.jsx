@@ -1,17 +1,18 @@
 import '../css/Nav.css'
 import Preview from './Preview';
+import HealthChart from './HealthChart';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 const Nav = () => {
-    const preview1 = useSelector((state)=>(state.healthChart.preview1))
+    
     const preview2 = useSelector((state)=>(state.checkUp.preview2))
     const preview3 = useSelector((state)=>(state.growth.preview3))
     const preview4 = useSelector((state)=>(state.temperature.preview4))
     
 
     const lists = [
-        { id:1, title:"건강피드", name:"first"}, { id:2, title:"건강피드", name:"second"}, { id:3, title:"성장관리", name:"third"}, { id:4, title:"체온관리", name:"fourth"},
+        { id:1, title:"건강피드", name:"first"}, { id:2, title:"검진/접종", name:"second"}, { id:3, title:"성장관리", name:"third"}, { id:4, title:"체온관리", name:"fourth"},
     ]
 
     const [content, setContent] = useState("first");
@@ -21,9 +22,9 @@ const Nav = () => {
         setContent(name);
     };
     const selectComponent = {
-        first: <Preview content={preview1}/>,
+        first:  <HealthChart/>,
         second: <Preview content={preview2}/>,
-        third: <Preview content={preview3}/>,
+        third:  <Preview content={preview3}/>,
         fourth: <Preview content={preview4}/>,
       };
 
@@ -38,7 +39,7 @@ const Nav = () => {
                 </div>
             </div>
             <>
-            {content ? <>{selectComponent[content]}</> : <Preview preview={preview1}/>}
+            {content && <>{selectComponent[content]}</>}
             </>
         </>
     );

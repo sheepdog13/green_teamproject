@@ -1,31 +1,26 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux"
-import { addinfant } from "../modules/Infant";
-import axios from 'axios'; 
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import DataContext from "../context/DataContext";
 
 const Login = () => {
+    const {action} = useContext(DataContext)
+    const data = useContext(DataContext)
     const [name,setName] = useState("");
     const [age,setAge] = useState(0);
-    const [ischecked,setIschecked] = useState(true);
-    const [gender,setGender] = useState("");
-    
-    const infantList = useSelector((state)=>state.infant.infantList)
-    const dispatch = useDispatch()
-    console.log(infantList)
+    const [gender,setGender] = useState("남성");
+    const navigate = useNavigate()
 
-    const addInfant = (e) => {
-        e.preventDefault();
-        dispatch(addinfant({
-            name : name,
-            age : age,
-            gender: gender
-        }))
+    const loginInfant = () => {
+        action.setInfant({name: name, age: age, gender: gender})
+        navigate('/');
+        data.action.setLogin(true);
+        
     }
     
-
     return (  
         <>
-            <form onSubmit={addInfant}>
+            <form onSubmit={loginInfant}>
                 <label>이름:</label>
                 <input type="text" onChange={
                     (e)=>{
@@ -37,18 +32,16 @@ const Login = () => {
                         setAge(e.target.value)
                     }
                 } />
-                <fieldset>
-                    <legend>성별</legend>
-                    남성 <input type="radio" name="gender" />
-                    여성 <input type="radio" name="gender" />
-                </fieldset>
+                <button onClick={(e)=>{
+                    e.preventDefault();
+                    setGender("남")
+                }}>남성</button>
+                <button onClick={(e)=>{
+                    e.preventDefault();
+                    setGender("여")
+                }}>여성</button>
                 <input type="submit" value="작성" />
-            </form>  
-            <ul>
-                {infantList.map((infant)=>(
-                    <li>{infant.name}{infant.age}{infant.gender}</li>
-                ))}
-            </ul>
+            </form>
         </>
     );
 }
