@@ -8,7 +8,7 @@ const Login = () => {
     const data = useContext(DataContext)
     const [name,setName] = useState("");
     const [age,setAge] = useState(0);
-    const [gender,setGender] = useState("남성");
+    const [gender,setGender] = useState("남");
     const navigate = useNavigate()
 
     const loginInfant = () => {
@@ -27,7 +27,7 @@ const Login = () => {
                         setName(e.target.value)
                     }
                 } />
-                <input type="text" placeholder="생년월일(YYYYMMDD)" onChange={
+                <input type="date" pattern="yyyy-MM-dd" onChange={
                     (e)=>{
                         setAge(e.target.value)
                     }

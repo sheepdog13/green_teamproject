@@ -3,10 +3,10 @@ import Preview from './Preview';
 import HealthChart from './HealthChart';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import CheckUp from './CheckUp';
 
 const Nav = () => {
     
-    const preview2 = useSelector((state)=>(state.checkUp.preview2))
     const preview3 = useSelector((state)=>(state.growth.preview3))
     const preview4 = useSelector((state)=>(state.temperature.preview4))
     
@@ -23,7 +23,7 @@ const Nav = () => {
     };
     const selectComponent = {
         first:  <HealthChart/>,
-        second: <Preview content={preview2}/>,
+        second: <CheckUp/>,
         third:  <Preview content={preview3}/>,
         fourth: <Preview content={preview4}/>,
       };
