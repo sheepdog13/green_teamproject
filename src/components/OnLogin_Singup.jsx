@@ -1,7 +1,8 @@
 import DataContext from "../context/DataContext";
 import { useContext } from "react";
+import "../css/OnLogin_Singup.css"
 
-const OnLogin_Header = () => {
+const OnLogin_Singup = () => {
     const data = useContext(DataContext)
     const age = String(data.state.infant.age)
     const date1 = new Date(data.state.infant.age);
@@ -13,19 +14,20 @@ const OnLogin_Header = () => {
 
     return (  
         <>
-            <div className="infant_img">
+            <div className="infant_img clearfix">
             {data.state.infant.gender == "남" ? (
                 <img src={process.env.PUBLIC_URL + "./images/male.jpg"} alt="남자아이프로필" />
             ):(
                 <img src={process.env.PUBLIC_URL + "./images/female.jpg"} alt="여자아이프로필" />
             )}
             </div>
-            <p>{data.state.infant.name}</p>
-            <p>D+{date}/{month}개월</p>
-            <p>{age.substr(0,4)+"/"+age.substr(5,2)+"/"+age.substr(8)}</p>
-            <p>{data.state.infant.gender}</p>
+            <ul>
+                <li className="bold">{data.state.infant.name}</li>
+                <li>{age.substr(0,4)+"/"+age.substr(5,2)+"/"+age.substr(8)} ({data.state.infant.gender})</li>
+                <li className="bold">D+{date}/ {month}개월</li>
+            </ul>
         </>
     );
 }
  
-export default OnLogin_Header;
+export default OnLogin_Singup;

@@ -2,7 +2,7 @@ import '../css/Singup.css'
 import { Link, useNavigate } from 'react-router-dom';
 import DataContext from "../context/DataContext";
 import { useContext } from "react";
-import OnLogin_Header from './OnLogin_Header';
+import OnLogin_Singup from './OnLogin_Singup';
 
 const Singup = () => {
     const data = useContext(DataContext);
@@ -18,11 +18,11 @@ const Singup = () => {
         <header>
             <div className="container clearfix">
                 <div className="row">
-                    <div className='header'>
-                        <button onClick={()=>{logOut()}}>로그아웃</button>
+                    <div className='header clearfix'>
+                        <button className='logout' onClick={()=>{logOut()}}>로그아웃</button>
                         {data.state.login ? (
                             <>
-                                <OnLogin_Header/>
+                                <OnLogin_Singup/>
                             </>
                         ):(
                             <>
