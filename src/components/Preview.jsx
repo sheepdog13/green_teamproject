@@ -5,7 +5,7 @@ const Preview = (props) => {
     return (  
         <>
             <section className="contents">
-                <div className="row">
+                <div className="My_row">
                     <div className="cont_box">
                             <p className="title">{preview.title}</p>
                             <p className="desc">{preview.desc.split("\n").map((txt) => (

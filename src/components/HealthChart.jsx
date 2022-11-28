@@ -14,7 +14,7 @@ const HealthChart = () => {
     return (  
             <div className='first_box'>
             {data.state.login ? (
-                <>
+                <div className='My_row'>
                     <ul>
                         <li className='title'>{data.state.infant.name}의 건강 피드를 생성해주세요</li>
                         <li>우측하단에 버튼을 누르면</li>
@@ -26,7 +26,7 @@ const HealthChart = () => {
                         setShow(true)
                     }}><FontAwesomeIcon icon={faPlus} /></button>
                     {show && <Health_Modal setShow={setShow}/>}
-                </>
+                </div>
             ):(
                 <Preview content={preview1} />
             )}

@@ -13,7 +13,7 @@ ${reset}
 .container {position: relative; width: 1280px; margin: 0 auto; background: rgb(0, 0, 0, 0);}
 
 /* 로우 영역 */
-.row {padding: 0 28px;}
+.My_row {padding: 0 28px;}
 
 /* 여백 초기화 */
 body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {margin:0; padding:0;}

@@ -10,14 +10,13 @@ const Singup = () => {
     
     const logOut = () => {
 		data.action.setLogin(false) 
-		data.action.setInfant(null);
 		navigate("/");
 	}
     
     return (  
         <header>
             <div className="container clearfix">
-                <div className="row">
+                <div className="My_row">
                     <div className='header clearfix'>
                         <button className='logout' onClick={()=>{logOut()}}>로그아웃</button>
                         {data.state.login ? (

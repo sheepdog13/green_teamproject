@@ -7,6 +7,7 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import rootReducer from './modules';
 import { BrowserRouter } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const store = createStore(rootReducer)
 

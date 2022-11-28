@@ -1,58 +1,54 @@
 import DataContext from "../context/DataContext";
 import { useContext} from "react";
 import { useState } from "react";
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 const OnLogin_CheckUp = () => {
     const data = useContext(DataContext);
-
-    const date1 = new Date(data.state.infant.age);
-    const date2 = new Date();
-    const diffDate = date1.getTime() - date2.getTime();
-    const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
     
     const [btn,setBtn] = useState(true);
 
     const health_check = function(){
-        if(month >= 71){
+        if(data.state.month >= 71){
             data.action.setHcheck(7);
-        } else if (month > 60){
+        } else if (data.state.month > 60){
             data.action.setHcheck(6);
-        } else if (month > 48){
+        } else if (data.state.month > 48){
             data.action.setHcheck(5);
-        } else if (month > 36){
+        } else if (data.state.month > 36){
             data.action.setHcheck(4);
-        } else if (month > 24){
+        } else if (data.state.month > 24){
             data.action.setHcheck(3);
-        } else if (month > 12){
+        } else if (data.state.month > 12){
             data.action.setHcheck(2);
-        } else if (month > 6){
+        } else if (data.state.month > 6){
             data.action.setHcheck(1);
         } else {
             return "수정"
         }
     }
     const inoculation_check = function(){
-        if(month > 144) {
-            data.action.setIcheck(37);
-        } else if(month > 72 ) {
-            data.action.setIcheck(33);
-        } else if(month > 35 ) {
-            data.action.setIcheck(31);
-        } else if(month > 23 ) {
-            data.action.setIcheck(28);
-        } else if(month > 18 ) {
-            data.action.setIcheck(24);
-        } else if(month > 15 ) {
-            data.action.setIcheck(19);
-        } else if(month > 6 ) {
-            data.action.setIcheck(14);
-        } else if(month > 4 ) {
-            data.action.setIcheck(8);
-        } else if(month > 2 ) {
+        if(data.state.month > 144) {
+            data.action.setIcheck(38);
+        } else if(data.state.month > 72 ) {
+            data.action.setIcheck(34);
+        } else if(data.state.month > 35 ) {
+            data.action.setIcheck(32);
+        } else if(data.state.month > 23 ) {
+            data.action.setIcheck(29);
+        } else if(data.state.month > 18 ) {
+            data.action.setIcheck(25);
+        } else if(data.state.month > 15 ) {
+            data.action.setIcheck(20);
+        } else if(data.state.month > 6 ) {
+            data.action.setIcheck(15);
+        } else if(data.state.month > 4 ) {
+            data.action.setIcheck(9);
+        } else if(data.state.month > 2 ) {
+            data.action.setIcheck(3);
+        } else if(data.state.month > 1 ) {
             data.action.setIcheck(2);
-        } else if(month > 1 ) {
-            data.action.setIcheck(1);
         } 
     }
     health_check()
@@ -72,14 +68,14 @@ const OnLogin_CheckUp = () => {
                     <p>전체7</p>
                     <p>미검진{7-data.state.hcheck}</p>
                     <p>검진완료{data.state.hcheck}</p>
-                    <p>{data.state.hcheck*12.5}퍼센트</p>
+                    <ProgressBar now={parseInt(data.state.hcheck*14.29) } label={`${parseInt(data.state.hcheck*14.29)}%`} variant="warning" />
                 </>
             ):(
                 <>
-                    <p>전체40</p>
-                    <p>미검진{40-data.state.icheck}</p>
+                    <p>전체41</p>
+                    <p>미검진{41-data.state.icheck}</p>
                     <p>검진완료{data.state.icheck}</p>
-                    <p>{data.state.icheck*2.5}퍼센트</p>
+                    <ProgressBar now={parseInt(data.state.icheck*2.44)} label={`${parseInt(data.state.icheck*2.44)}%`} variant="warning"/>
                 </>
             )}
         </>

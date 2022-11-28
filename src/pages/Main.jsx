@@ -4,10 +4,10 @@ import Singup from "../components/Singup";
 const Main = () => {
 
     return ( 
-        <>
+        <div>
             <Singup/>
             <Nav/>
-        </>    
+        </div>    
     );
 }
  

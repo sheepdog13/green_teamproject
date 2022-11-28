@@ -4,13 +4,7 @@ import "../css/OnLogin_Singup.css"
 
 const OnLogin_Singup = () => {
     const data = useContext(DataContext)
-    const age = String(data.state.infant.age)
-    const date1 = new Date(data.state.infant.age);
-    const date2 = new Date();
-    const diffDate = date1.getTime() - date2.getTime();
-
-    const date = Math.floor(Math.abs(diffDate /  ( 1000 * 60 * 60 * 24 )));
-    const month = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
+    
 
     return (  
         <>
@@ -23,8 +17,8 @@ const OnLogin_Singup = () => {
             </div>
             <ul>
                 <li className="bold">{data.state.infant.name}</li>
-                <li>{age.substr(0,4)+"/"+age.substr(5,2)+"/"+age.substr(8)} ({data.state.infant.gender})</li>
-                <li className="bold">D+{date}/ {month}개월</li>
+                <li>{data.state.age.substr(0,4)+"/"+data.state.age.substr(5,2)+"/"+data.state.age.substr(8)} ({data.state.infant.gender})</li>
+                <li className="bold">D+{data.state.date}/ {data.state.month}개월</li>
             </ul>
         </>
     );
