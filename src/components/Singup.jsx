@@ -10,6 +10,7 @@ const Singup = () => {
     
     const logOut = () => {
 		data.action.setLogin(false) 
+        data.action.setIsMeasures(false)
 		navigate("/");
 	}
     

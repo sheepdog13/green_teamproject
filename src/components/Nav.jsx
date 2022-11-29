@@ -4,6 +4,7 @@ import HealthChart from './HealthChart';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import CheckUp from './CheckUp';
+import Notice from './Notice';
 
 const Nav = () => {
     
@@ -25,7 +26,7 @@ const Nav = () => {
         first:  <HealthChart/>,
         second: <CheckUp/>,
         third:  <Preview content={preview3}/>,
-        fourth: <Preview content={preview4}/>,
+        fourth: <Notice />,
       };
 
       const list = lists.map((el) => (

@@ -6,6 +6,7 @@ const DataProvider = ({children}) => {
     const [infant,setInfant] = useState({name:"홍길동", age:"2020-11-23", gender:"남"})
     const [measures,setMesures] = useState({height:20, 
     weight:10, temperature:36, medicine:"타이레놀" })
+    const [ismeasures,setIsMeasures] = useState(false) 
     const [login,setLogin] = useState(true)
     const [hcheck,setHcheck] = useState(0);
     const [icheck,setIcheck] = useState(0);
@@ -20,8 +21,8 @@ const DataProvider = ({children}) => {
 
 
     const value = {
-        state : {infant, login, hcheck, icheck, date, month, age, measures},
-        action : {setInfant, setLogin, setHcheck, setIcheck, setMesures }
+        state : {infant, login, hcheck, icheck, date, month, age, measures, ismeasures},
+        action : {setInfant, setLogin, setHcheck, setIcheck, setMesures, setIsMeasures}
     };
 
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>
