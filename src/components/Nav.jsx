@@ -7,11 +7,8 @@ import CheckUp from './CheckUp';
 import Notice from './Notice';
 
 const Nav = () => {
-    
-    const preview3 = useSelector((state)=>(state.growth.preview3))
-    const preview4 = useSelector((state)=>(state.temperature.preview4))
-    
-
+    const preview3 = useSelector((state)=>(state.growth.preview3))  
+      
     const lists = [
         { id:1, title:"건강피드", name:"first"}, { id:2, title:"검진/접종", name:"second"}, { id:3, title:"성장관리", name:"third"}, { id:4, title:"체온관리", name:"fourth"},
     ]

@@ -15,16 +15,31 @@ const HealthChart = () => {
             <div className='first_box'>
             {data.state.ismeasures ? (
                 <>
+                {measures.height ? (
                     <div>
                         <p>키 {measures.height} cm</p>
                         <p>축하합니다!</p>
                         <p>키가 {measures.height}cm를 넘었어요</p>
-                    </div>
+                    </div> 
+                ):(
+                    <></>
+                ) 
+                }
+                {measures.weight ? (
                     <div>
                         <p>몸무게 {measures.weight} kg</p>
                         <p>축하합니다!</p>
                         <p>몸무게가 {measures.weight}kg 넘었어요</p>
                     </div>
+                ):(
+                    <></>
+                )
+                    
+                }  
+                    <button className='plus_btn' onClick={()=>{
+                                setShow(true)
+                    }}><FontAwesomeIcon icon={faPlus} /></button>
+                    {show && <Health_Modal setShow={setShow}/>}
                 </>
             ):(
                 data.state.login ? (

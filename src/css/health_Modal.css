@@ -4,9 +4,7 @@
     position: fixed; left: 0; top: 0;
 }
 .layer_bg .layer {width: 200px; height: 250px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 100; background-color: #fff; border-radius: 25px; box-sizing: border-box; }
-.layer_bg .layer .close {}
 
-.layer ul.modal_title { }
 .layer ul.modal_title li {border-bottom: 1px solid #ccc;}
 .layer ul.modal_title li:last-child{border: none; position: relative;}
 .layer ul.modal_title li a {display: block; font-size: 14px; text-align: center; padding: 14px 0;}

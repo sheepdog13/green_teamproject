@@ -4,8 +4,8 @@ const DataContext = createContext();
 
 const DataProvider = ({children}) => {
     const [infant,setInfant] = useState({name:"홍길동", age:"2020-11-23", gender:"남"})
-    const [measures,setMesures] = useState({height:20, 
-    weight:10, temperature:36, medicine:"타이레놀" })
+    const [measures,setMesures] = useState({height:0, 
+    weight:0, temperature:0, medicine:"" })
     const [ismeasures,setIsMeasures] = useState(false) 
     const [login,setLogin] = useState(true)
     const [hcheck,setHcheck] = useState(0);
