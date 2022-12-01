@@ -46,7 +46,7 @@ const HealthChart = () => {
                     <>
                         <div className='My_row'>
                             <ul>
-                                <li className='title'>{data.state.infant.name}의 건강 피드를 생성해주세요</li>
+                                <li className='f_title'>{data.state.infant.name}의 건강 피드를 생성해주세요</li>
                                 <li>우측하단에 버튼을 누르면</li>
                                 <li className='bold'>키/몸무게/체온/해열제/처방전</li>
                                 <li>을 등록할 수 있어요~</li>
