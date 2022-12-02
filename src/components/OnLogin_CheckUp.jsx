@@ -82,39 +82,55 @@ const OnLogin_CheckUp = () => {
     const selectComponent = {
         first:  <>
                     {hchecks.filter((el)=> el.id < data.state.hcheck).map((el)=>(
-                    <div className="h_box clearfix">
-                        <h2 className="h_title clearfix">{el.id}차 건강검진</h2>
-                        <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        <FontAwesomeIcon className="icon active" icon={faStethoscope} />
-                        <p className="check">검진완료</p>
+                    <div className="h_box clearfix" key={el.id}>
+                        <div className="left_box">
+                            <h2 className="h_title">{el.id}차 건강검진</h2>
+                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                        </div>
+                        <div className="right_box">
+                            <FontAwesomeIcon className="icon active" icon={faStethoscope} />
+                            <p className="check">검진완료</p>
+                        </div>
                     </div>
                     ))}
                     {hchecks.filter((el)=> el.id >= data.state.hcheck).map((el)=>(
-                    <div>
-                        <h2>{el.id}차 건강검진</h2>
-                        <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        <p>검진필요</p>
-                        <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                    <div className="h_box clearfix" key={el.id}>
+                        <div className="left_box">
+                            <h2 className="h_title">{el.id}차 건강검진</h2>
+                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                        </div>
+                        <div className="right_box">
+                            <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                            <p className="check">검진필요</p>
+                        </div>
                     </div>
                     ))}
                 </>,
         second: <>
                     {hchecks.filter((el)=> el.id >= data.state.hcheck).map((el)=>(
-                    <div >
-                        <h2>{el.id}차 건강검진</h2>
-                        <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        <p>검진필요</p>
-                        <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                    <div className="h_box clearfix" key={el.id}>
+                        <div className="left_box">
+                            <h2 className="h_title">{el.id}차 건강검진</h2>
+                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                        </div>
+                        <div className="right_box">
+                            <FontAwesomeIcon className="icon" icon={faStethoscope} />
+                            <p className="check">검진필요</p>
+                        </div>
                     </div>
                     ))}
                 </>,
         third:  <>
                     {hchecks.filter((el)=> el.id < data.state.hcheck).map((el)=>(
-                    <div>
-                        <h2>{el.id}차 건강검진</h2>
-                        <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
-                        <p>검진완료</p>
-                        <FontAwesomeIcon className="icon active" icon={faStethoscope} />
+                    <div className="h_box clearfix">
+                        <div className="left_box">
+                            <h2 className="h_title">{el.id}차 건강검진</h2>
+                            <p>생후 {el.s_month}개월 ~ {el.e_month}개월</p>
+                        </div>
+                        <div className="right_box">
+                            <FontAwesomeIcon className="icon active" icon={faStethoscope} />
+                            <p className="check">검진완료</p>
+                        </div>
                     </div>
                     ))}
                 </>,
@@ -154,6 +170,7 @@ const OnLogin_CheckUp = () => {
                             <li className={content=='second' && "active"}><a href="#" name="second" onClick={handleClickButton}>미검진 {7-data.state.hcheck}</a></li>
                             <li className={content=='third' && "active"}><a href="#" name="third" onClick={handleClickButton}>검진완료 {data.state.hcheck}</a></li>
                         </ul>
+                        {content && <>{selectComponent[content]}</>}
                     </>
                 ):(
                     <>
@@ -171,7 +188,6 @@ const OnLogin_CheckUp = () => {
                 )}
             </div>
         </div>
-        {content && <>{selectComponent[content]}</>}
        </> 
     );
 }
