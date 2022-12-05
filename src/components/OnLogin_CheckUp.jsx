@@ -17,9 +17,7 @@ const OnLogin_CheckUp = () => {
     const [dname,setDName] = useState("")
 
     const health_check = function(){
-        if(data.state.month > 71){
-            data.action.setHcheck(8);
-        } else if (data.state.month > 60){
+        if (data.state.month > 60){
             data.action.setHcheck(7);
         } else if (data.state.month > 48){
             data.action.setHcheck(6);
@@ -182,7 +180,7 @@ const OnLogin_CheckUp = () => {
                 </div>
                 {btn ? (
                     <> 
-                        <h2 className="s_title">현재 {data.state.hcheck+1}차 건강검진 기간입니다</h2>
+                        <h2 className="s_title">현재 {data.state.hcheck}차 건강검진 기간입니다</h2>
                         <div className="progressbar_box clearfix">
                             <p >검진율</p>
                             <ProgressBar className="progressbar" now={parseInt((data.state.hcheck-1)*14.29) } label={`${parseInt((data.state.hcheck-1)*14.29)}%`} variant="warning" />
