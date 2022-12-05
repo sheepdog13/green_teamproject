@@ -1,8 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
-
-
 const GlobalStyles = createGlobalStyle`
 ${reset}
 // 아래에 전역 스타일을 추가
@@ -20,7 +18,7 @@ body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, lege
 
 /* a 링크 초기화 */
 a {color: #222; text-decoration: none;}
-a:hover {}
+a:hover {color: #390;}
 
 /* 폰트 초기화 */
 body, input, textarea, select, button, table{  font-family:'Noto Sans KR', AppleSDGothicNeo-Regular,'Malgun Gothic','맑은 고딕',dotum,'돋움',sans-serif; 
@@ -67,7 +65,57 @@ img, video {width: 100%;}
 .mt40 {margin-top: 40px !important;}
 .mt45 {margin-top: 45px !important;}
 .mt50 {margin-top: 50px !important;}
+
+/* 아이콘 이미지 최적화 작업 */
+.icon {background-image: url(/img/icon.png);}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 1.5dppx){
+            .icon {background-image: url(./img/icon@2.png); background-size: 500px;}
+       }
+
+       /* input style */
+       input {background-image: none;}
+       input[type=button],
+       input[type=reset],
+       input[type=text],
+       input[type=password],
+       input[type=submit],
+       input[type=search],
+       input[type=tel],
+       input[type=email] {
+           -webkit-appearance: none;
+           border-radius: 0
+       }
+       input[type=search]::-webkit-search-cancel-button,
+       input[type=search]::-webkit-search-decoration {
+           -webkit-appearance: none
+       }
+       input:checked[type=checkbox] {
+           background-color: #666;
+           -webkit-appearance: checkbox
+       }
        
+       /* 셀렉트 메뉴 메인 스타일 */
+       .ui_select2 {
+           width: 100%; box-sizing: border-box;
+           background: #2c2f34; color: #fff;
+           display: inline-block; height: 36px;
+           border: 0 none; padding: 0 10px; margin: 0;
+           font-family: inherit; font-size: inherit;
+           vertical-align: middle; text-align: left;
+           white-space: nowrap;
+           background: #2c2f34 url(../img/down.svg) no-repeat right 10px center;
+           background-size: 10px;
+           -webkit-appearance: none;
+           -moz-appearance : none;
+           appearance : none;
+       }
+       /* 메인 텍스트 박스 스타일1 */
+        .ui_input3 {
+            background: #2c2f34; color: #fff; width: 100%; height: 36px; padding: 0 10px;
+        }
 `;
 
 export default GlobalStyles;

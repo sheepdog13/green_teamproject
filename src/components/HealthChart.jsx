@@ -11,12 +11,14 @@ const HealthChart = () => {
     const preview1 = useSelector((state)=>(state.healthChart.preview1))
     const [show,setShow] = useState(false)
     const measures = data.state.measures;
+    const date = new Date()
     return (  
             <div className='first_box'>
             {data.state.ismeasures ? (
                 <>
                 {measures.height ? (
                     <div>
+                        <p>{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
                         <p>키 {measures.height} cm</p>
                         <p>축하합니다!</p>
                         <p>키가 {measures.height}cm를 넘었어요</p>
@@ -27,6 +29,7 @@ const HealthChart = () => {
                 }
                 {measures.weight ? (
                     <div>
+                        <p>{date.getFullYear()+"/"+(date.getMonth()+1)+"/"+date.getDate()}</p>
                         <p>몸무게 {measures.weight} kg</p>
                         <p>축하합니다!</p>
                         <p>몸무게가 {measures.weight}kg 넘었어요</p>
