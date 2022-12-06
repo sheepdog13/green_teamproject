@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const DataContext = createContext();
 
 const DataProvider = ({children}) => {
-    const [infant,setInfant] = useState({name:"홍길동", age:"2020-11-23", gender:"남"})
+    const [infant,setInfant] = useState({name:"홍길동", age:"2021-01-24", gender:"남"})
     const [measures,setMesures] = useState({height:0, 
     weight:0, temperature:0, medicine:"" })
     const [ismeasures,setIsMeasures] = useState(false) 
