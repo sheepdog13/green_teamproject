@@ -8,6 +8,7 @@ import { DataProvider } from "./context/DataContext";
 
 import Main from './pages/Main';
 import Login from './pages/Login';
+import GetUserData from './components/GetUserData';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Main />}></Route>
           {/* 로그인페이지 설정 */}
           <Route path="/Login" element={<Login />}></Route>
+          <Route path="/user" element={<GetUserData />}></Route>
         </Routes>
       </DataProvider>
     </div>
